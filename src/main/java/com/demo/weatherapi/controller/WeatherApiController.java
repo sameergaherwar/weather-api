@@ -24,7 +24,7 @@ public class WeatherApiController {
         try {
             return ResponseEntity.ok(ApiResponse.builder().payload(weatherApiService.getWarmestDay(latitude, longitude)).status(ApiResponseEnum.SUCCESS.toString()).build());
         } catch (Exception e) {
-            return ResponseEntity.ok(ApiResponse.builder().payload("Unhandled exception encountered").status(ApiResponseEnum.ERROR.toString()).build());
+            return ResponseEntity.ok(ApiResponse.builder().payload("Error occured while processing the request").status(ApiResponseEnum.ERROR.toString()).build());
         }
     }
 }
